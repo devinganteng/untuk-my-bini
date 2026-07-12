@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Surprise ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:
+radial-gradient(circle at top,#244f90,#081327,#020611);
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+color:white;
+
+}
+
+.stars{
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.star{
+
+position:absolute;
+
+width:2px;
+
+height:2px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 3s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+from{
+
+opacity:.2;
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1.8);
+
+}
+
+}
+
+.card{
+
+width:90%;
+
+max-width:700px;
+
+padding:50px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+}
+
+h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:70px;
+
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:20px;
+
+line-height:2;
+
+color:#dcecff;
+
+margin-bottom:40px;
+
+}
+
+button{
+
+padding:16px 35px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+background:#5faeff;
+
+color:white;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 30px #5faeff;
+
+}
+
+.heart{
+
+position:fixed;
+
+bottom:-30px;
+
+font-size:28px;
+
+animation:float 8s linear forwards;
+
+}
+
+@keyframes float{
+
+from{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="card">
+
+<h1>❤️ Surprise ❤️</h1>
+
+<p>
+
+Thank you for coming into my life.
+Every smile, every laugh, every memory with you is something I treasure.
+No matter what happens in the future, I hope you always remember how special you are to me.
+You are my favorite person.
+
+❤️
+
+</p>
+
+<button onclick="window.location='index.html'">
+
+Back Home
+
+</button>
+
+</div>
+
+<script>
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<200;i++){
+
+const star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+star.style.animationDelay=Math.random()*3+"s";
+
+stars.appendChild(star);
+
+}
+
+function heart(){
+
+const h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+
+h.remove();
+
+},8000);
+
+}
+
+setInterval(heart,500);
+
+</script>
+
+</body>
+
+</html>
